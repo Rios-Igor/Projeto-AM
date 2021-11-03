@@ -1,10 +1,5 @@
 /* Style do site marcial */
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
   
   .dash-container {
     display: flex;
@@ -33,10 +28,12 @@
     border-bottom: 3px solid #f11818;
     outline: 3px solid #0daceb;
     margin-bottom: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
   .header .container .highlight {
     color: #f11818;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   
   .header h1 {
@@ -70,5 +67,34 @@
     margin-bottom: 5px;
     margin-top: 15px;
   }
-  
+  .navbar{
+    display: flex;
+    width: 35%;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+}
+.navbar li{
+    font-weight: lighter;
+    color: white;
+    font-size: 14px;
+}
+.navbar .active{
+    font-weight: bolder;
+    color: #b01105;
+}
+.navbar li a{
+  text-decoration: none;
+  color: #f11818;
+}
+.container{
+  width: 80%;
+  height: 100%;
+  margin: auto;
+}
+.header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
   
