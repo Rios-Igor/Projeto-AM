@@ -22,16 +22,25 @@
     <div class="container">
       <h1>Site <span class="highlight">Marcial</span></h1>
       <ul class="navbar">
-        <li class="active"><a href="index.html">Inicio</a></li>
+        <li><a href="index.html">Inicio</a></li>
         <li><a href="">Teste</a></li>
         <li><a href="">Cadastro</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li class="active"><a href="login.html">Login</a></li>
       </ul>
     </div>
   </div>
 
-  <div class="conteudo">
+  <div class="login">
+    <h1>Acesse sua conta</h1><br>
 
+    Login:<br>
+    <input id="usuario" class="ipt" type="text" placeholder="Insira seu nome de usuário"><br><br>
+    Senha:<br>
+    <input id="senha" class="ipt" type="password" placeholder="Digite sua senha"><br><br>
+    <div id="botao">
+        <button class="btn" onclick=entrarlogin();>Entrar</button>
+        <!-- <button class="btn2" onclick=cadastro();>Cadastre-se</button>-->
+    </div>
   </div>
 
   <div class="footer">
