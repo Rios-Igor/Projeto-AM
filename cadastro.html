@@ -24,22 +24,27 @@
       <ul class="navbar">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="">Teste</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        <li class="active"><a href="login.html">Login</a></li>
+        <li class="active"><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="login.html">Login</a></li>
       </ul>
     </div>
   </div>
 
   <div class="conteudo">
-    <div class="login">
-      <h1>Acesse sua conta</h1><br>
+    <div class="cadastro">
+      <h3>Crie sua conta</h3><br>
 
-      Login:<br>
-      <input id="usuario" class="ipt" type="text" placeholder="Insira seu nome de usuário"><br><br>
-      Senha:<br>
-      <input id="senha" class="ipt" type="password" placeholder="Digite sua senha"><br><br>
+      <span class="tit">E-mail:</span><br>
+      <input id="usuario" class="ipt" type="email" placeholder="Insira seu nome de usuário"><br>
+      <span class="tit">Login:</span><br>
+      <input id="usuario" class="ipt" type="text" placeholder="Insira seu nome de usuário"><br>
+      <span class="tit">Senha:</span><br>
+      <input id="senha" class="ipt" type="password" placeholder="Digite sua senha"><br>
+      <span class="tit">Confirme sua senha:</span><br>
+      <input id="senha-conf" class="ipt" type="password" placeholder="Digite sua senha"><br>
       <div id="botao">
-          <button class="btn" onclick=entrarlogin();>Entrar</button>
+          <button class="btn" onclick="criar()";>Criar</button><br>
+          <span><a href="login.html">Já tenha uma conta</a></span>
           <!-- <button class="btn2" onclick=cadastro();>Cadastre-se</button>-->
       </div>
     </div>
