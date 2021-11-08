@@ -2,60 +2,70 @@
 <html lang="pt">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="https://cdn0.iconfinder.com/data/icons/japan-4/512/b100_2-128.png"
-    type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Site Marcial</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <script src="./assets/js/funcoes.js"></script>
 
-  <!-- Da acesso a lib -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="shortcut icon" href="https://cdn0.iconfinder.com/data/icons/japan-4/512/b100_2-128.png"
+    type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-  <!-- Header -->
-
   <div class="header">
     <div class="container">
       <h1>Site <span class="highlight">Marcial</span></h1>
       <ul class="navbar">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="">Teste</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        <li class="active"><a href="login.html">Login</a></li>
+        <li>
+          <a href="./index.html">Inicial</a>
+        </li>
+        <li>
+          <a href="./simulador.html">MAC</a>
+        </li>
+        <li>|</li>
+        <li class="agora">
+          Login
+        </li>
+        <li>
+          <a href="./cadastro.html">Cadastro</a>
+        </li>
       </ul>
     </div>
   </div>
 
-  <div class="conteudo">
-    <div class="login">
-      <h1>Acesse sua conta</h1><br>
+  <div class="banner">
 
-      Login:<br>
-      <input id="usuario" class="ipt" type="text" placeholder="Insira seu nome de usuário"><br><br>
-      Senha:<br>
-      <input id="senha" class="ipt" type="password" placeholder="Digite sua senha"><br><br>
-      <div id="botao">
-          <button class="btn" onclick=entrarlogin();>Entrar</button>
-          <!-- <button class="btn2" onclick=cadastro();>Cadastre-se</button>-->
-      </div>
+    <div id="login">
+        <div id="conteudo">
+            <h1>Acesse sua conta</h1><br>
+
+            Login:<br>
+            <input id="usuario" class="ipt" type="text" placeholder="Insira seu nome de usuário"><br><br>
+            Senha:<br>
+            <input id="senha" class="ipt" type="password" placeholder="Digite sua senha"><br><br>
+            <div id="botao">
+                <button class="btn" onclick=entrarlogin();>Entrar</button>
+                <!-- <button class="btn2" onclick=cadastro();>Cadastre-se</button>-->
+            </div>
+
+        </div>
     </div>
-  </div>  
 
-  <footer>
+</div>
+
+  <div class="footer">
     <div class="container">
-        <h4>Developed by Igor Quintanilha from BandTec &copy; 2021</h4>
+      <h4>Developed by Igor Quintanilha from BandTec &copy; 2021</h4>
     </div>
-  </footer>
-
-
+  </div>
 </body>
 
 </html>
-
-<script>
-
-</script>

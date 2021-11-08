@@ -81,6 +81,35 @@ body {
     font-weight: 800;
 }
 
+/* login */
+
+#login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#container{
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    padding: 50px;
+    padding-top: 40px;
+    background-color: white;
+    border-radius: 20px;
+    border: solid black 4px;
+    box-shadow: 5px 5px 0.03px black;
+}
+
+.ipt{
+    height: 22px;
+    width: 260px;
+    border-radius: 10px;
+    padding: 3px;
+    margin: 3px;
+}
+
 /* missao visao valores */
 
 .social {
@@ -183,7 +212,7 @@ h4 {
 }
 
 .banner-login {
-    color: #E6005A;
+    color: #0daceb;
 }
 
 .banner-login .card {
@@ -216,24 +245,28 @@ button {
 
 input {
     height: 30px;
-    border: 2px solid #E6005A;
+    border: 2px solid #0daceb;
     border-radius: 10px;
 }
 
-.btn {
-    font-family: 'Exo 2', sans-serif;
-    border: 0;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 10px 15px;
-    color: white;
-    background-color: #E6005A;
-    width: 120px;
-    align-self: center;
+button{ 
+    justify-content: center;
+    align-items: center;
+    cursor: hand;
+    border: 1px;
+    background-color: #0011f8;
+    color: #fdfdfd;
+    padding: 10px;
+    font-size: 20px;
+    width: 200px;
+    transition: background .6s ease-in, transform .5s .25s ease-in-out;
 }
 
-
+button:hover {
+    background-color: red;
+  /*  transform: scale(1.2);*/
+    transform: scale(1.2) rotateX(30deg);
+  }
 
 form {
     display: flex;
@@ -314,7 +347,7 @@ form {
 .btn-nav {
     width: 40%;
     color: white;
-    background-color: #E6005A;
+    background-color: #0daceb;
     border-radius: 5px;
     text-align: center;
     padding: 2% 5%;
@@ -323,14 +356,14 @@ form {
 .btn-nav-white {
     width: 40%;
     background-color: white;
-    border: 3px solid #E6005A;
+    border: 3px solid #0daceb;
     border-radius: 5px;
     text-align: center;
     padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-    color: #E6005A;
+    color: #0daceb;
     padding: 0;
     margin: 0;
 }
