@@ -38,6 +38,7 @@ body {
 
 .agora {
     font-weight: 800;
+	color: #0daceb;
 }
 
 .navbar {
@@ -174,7 +175,7 @@ body {
 /* FOOTER */
 
 .footer {
-    background-color: #008d81;
+    background-color: blue;
     height: 100px;
     color: white;
     margin: 0;
@@ -240,6 +241,7 @@ h4 {
 button {
     cursor: pointer;
 }
+
 
 /* FORMULARIO */
 
