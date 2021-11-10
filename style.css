@@ -82,6 +82,12 @@ body {
     font-weight: 800;
 }
 
+.banner .posicao_escolha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* login */
 
 #login{
@@ -172,10 +178,38 @@ body {
     margin-top: 30px;
 }
 
+/* mac */
+
+#jiu{
+    border: #f11818 solid 2px;
+}
+
+#judo{
+    border: #f11818 solid 2px;
+}
+
+#boxe{
+    border: #f11818 solid 2px;
+}
+
+#thai{
+    border: #f11818 solid 2px;
+}
+
+#mma{
+    border: #f11818 solid 2px;
+}
+
+.escolha_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* FOOTER */
 
 .footer {
-    background-color: blue;
+    background-color: rgb(0, 4, 36);
     height: 100px;
     color: white;
     margin: 0;
@@ -269,6 +303,13 @@ button:hover {
   /*  transform: scale(1.2);*/
     transform: scale(1.2) rotateX(30deg);
   }
+
+#conteudo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
 form {
     display: flex;
@@ -389,7 +430,3 @@ form {
     cursor: pointer;
 }
 
-/* pagina extra - simulador */
-.simulador {
-    color: white;
-}

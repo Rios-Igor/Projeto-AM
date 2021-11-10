@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Site Marcial</title>
+
+  <script src="./assets/js/funcoes.js"></script>
+
+  <link rel="shortcut icon" href="https://cdn0.iconfinder.com/data/icons/japan-4/512/b100_2-128.png"
+    type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <h1>Site <span class="highlight">Marcial</span></h1>
+      <ul class="navbar">
+        <li>
+          <a href="./index.html">Inicial</a>
+        </li>
+        <li class="agora">
+          MAC
+        </li>
+        <li>|</li>
+        <li>
+            <a href="./login.html">Login</a>
+        </li>
+        <li>
+          <a href="./cadastro.html">Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<div class="banner">
+
+    <div id="login">
+        <div id="conteudo">
+            <h1>Martial Arts Combat</h1><br>
+
+            
+                <!-- <button class="btn" onclick=comecar();>Começar</button> -->
+                <!-- <button class="btn2" onclick=cadastro();>Cadastre-se</button>-->
+                
+            
+                <div id="golpes_btn" style="display: none;">
+                    <button onclick="atacar()">Atacar Oponente</button>
+                    <button onclick="apanhar()">Receber ataque</button><br><br>
+                </div>
+
+        </div>
+    </div>
+    <div id="div_jiu">
+        <img id="jiu" src="https://p2.trrsf.com/image/fget/cf/648/0/images.terra.com/2018/10/20/5bcb58c19fd91.jpeg"
+        style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
+    </div>
+    <div id="div_judo">
+        <img id="judo" src="https://http2.mlstatic.com/D_NQ_NP_806659-MLB27481345094_062018-O.webp"
+        style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
+    </div>
+    <div id="div_boxe">
+        <img id="boxe" src="http://www.animatedspirit.com/wp-content/uploads/2016/04/Ali.jpg"
+        style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
+    </div>
+    <div id="div_thai">
+        <img id="thai" src="https://i.pinimg.com/originals/ae/6c/a2/ae6ca284ed32d749c94437e735d61b91.jpg"
+        style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
+    </div>
+    <div id="div_mma">
+        <img id="mma" src="https://vejario.abril.com.br/wp-content/uploads/2016/11/4899_anderson-silva-jpg.jpeg"
+        style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
+    </div>
+            <div class="lifev" style="background-color:red; height: 50px; width: 100%; display: none;"></div>
+            <div class="lifea" style="background-color:blue; height: 50px; width: 100%; display: none;"></div>
+    <div class="posicao_escolha">
+        <div class="escolha_btn" style="display: block;">
+            <button onclick="atacar()">Jiu-Jitsu</button>
+            <button onclick="apanhar()">Judô</button>
+            <button onclick="apanhar()">Boxe</button>
+            <button onclick="apanhar()">Muay Thai</button>
+            <button onclick="apanhar()">MMA</button>
+        </div>    
+    </div>   
+</div>
+
+  <div class="footer">
+    <div class="container">
+      <h4>Developed by Igor Quintanilha from BandTec &copy; 2021</h4>
+    </div>
+  </div>
+</body>
+
+</html>
+
+ 
