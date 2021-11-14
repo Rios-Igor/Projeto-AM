@@ -88,6 +88,8 @@ body {
     justify-content: center;
 }
 
+
+
 /* login */
 
 #login{
@@ -180,27 +182,44 @@ body {
 
 /* mac */
 
+
 #jiu{
-    border: #f11818 solid 2px;
+    border: #f11818 solid 5px;
 }
 
 #judo{
-    border: #f11818 solid 2px;
+    border: #f11818 solid 5px;
 }
 
 #boxe{
-    border: #f11818 solid 2px;
+    border: #f11818 solid 5px;
 }
 
 #thai{
-    border: #f11818 solid 2px;
+    border: #f11818 solid 5px;
 }
 
 #mma{
-    border: #f11818 solid 2px;
+    border: #f11818 solid 5px;
 }
 
-.escolha_btn{
+#adv{
+    border: #0daceb solid 5px;
+}
+
+#escolha_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#luta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu_btn{
     display: flex;
     align-items: center;
     justify-content: center;

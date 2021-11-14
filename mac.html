@@ -8,8 +8,6 @@
 
   <title>Site Marcial</title>
 
-  <script src="./assets/js/funcoes.js"></script>
-
   <link rel="shortcut icon" href="https://cdn0.iconfinder.com/data/icons/japan-4/512/b100_2-128.png"
     type="image/x-icon">
   <link rel="stylesheet" href="style.css">
@@ -56,38 +54,55 @@
                     <button onclick="atacar()">Atacar Oponente</button>
                     <button onclick="apanhar()">Receber ataque</button><br><br>
                 </div>
+				<div id="menu_btn" style="display: none;">
+                    <button onclick="voltar()">Voltar ao Menu</button>
+             </div>
 
         </div>
     </div>
-    <div id="div_jiu">
-        <img id="jiu" src="https://p2.trrsf.com/image/fget/cf/648/0/images.terra.com/2018/10/20/5bcb58c19fd91.jpeg"
-        style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
-    </div>
-    <div id="div_judo">
-        <img id="judo" src="https://http2.mlstatic.com/D_NQ_NP_806659-MLB27481345094_062018-O.webp"
-        style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
-    </div>
-    <div id="div_boxe">
-        <img id="boxe" src="http://www.animatedspirit.com/wp-content/uploads/2016/04/Ali.jpg"
-        style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
-    </div>
-    <div id="div_thai">
-        <img id="thai" src="https://i.pinimg.com/originals/ae/6c/a2/ae6ca284ed32d749c94437e735d61b91.jpg"
-        style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
-    </div>
-    <div id="div_mma">
-        <img id="mma" src="https://vejario.abril.com.br/wp-content/uploads/2016/11/4899_anderson-silva-jpg.jpeg"
-        style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
-    </div>
-            <div class="lifev" style="background-color:red; height: 50px; width: 100%; display: none;"></div>
-            <div class="lifea" style="background-color:blue; height: 50px; width: 100%; display: none;"></div>
+	
+		<div id="luta">
+			<div id="div_jiu">
+				<img id="jiu" src="https://p2.trrsf.com/image/fget/cf/648/0/images.terra.com/2018/10/20/5bcb58c19fd91.jpeg"
+				style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
+			</div>
+			<div id="div_judo">
+				<img id="judo" src="https://http2.mlstatic.com/D_NQ_NP_806659-MLB27481345094_062018-O.webp"
+				style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
+			</div>
+			<div id="div_boxe">
+				<img id="boxe" src="http://www.animatedspirit.com/wp-content/uploads/2016/04/Ali.jpg"
+				style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
+			</div>
+			<div id="div_thai">
+			<!-- Saenchai pronunci Senchai!-->
+				<img id="thai" src="https://i.pinimg.com/originals/ae/6c/a2/ae6ca284ed32d749c94437e735d61b91.jpg"
+				style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
+			</div>
+			<div id="div_mma">
+				<img id="mma" src="https://vejario.abril.com.br/wp-content/uploads/2016/11/4899_anderson-silva-jpg.jpeg"
+				style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
+			</div>
+			<div id="div_adv">
+				<img id="adv" src="https://i.pinimg.com/236x/68/8f/1f/688f1fd2234db0316cc7f38485d76449.jpg"
+				style="transform: scaleX(-1); height: 250px; width: 250px; display: none;">
+			</div>
+		</div>
+	
+            <div id="lifev" style="background-color:red; height: 40px; width: 100%; display: none;"></div>
+            <div id="lifea" style="background-color:blue; height: 40px; width: 100%; display: none;"></div>
+			
+			
+			
+			
+	
     <div class="posicao_escolha">
-        <div class="escolha_btn" style="display: block;">
-            <button onclick="atacar()">Jiu-Jitsu</button>
-            <button onclick="apanhar()">Judô</button>
-            <button onclick="apanhar()">Boxe</button>
-            <button onclick="apanhar()">Muay Thai</button>
-            <button onclick="apanhar()">MMA</button>
+        <div id="escolha_btn" style="display: block;">
+            <button onclick="jiu_btn()">Jiu-Jitsu</button>
+            <button onclick="judo_btn()">Judô</button>
+            <button onclick="boxe_btn()">Boxe</button>
+            <button onclick="thai_btn()">Muay Thai</button>
+            <button onclick="mma_btn()">MMA</button>
         </div>    
     </div>   
 </div>
@@ -100,5 +115,114 @@
 </body>
 
 </html>
+
+<script>
+
+	var vidav = 100;
+    var vidaa = 100;
+	
+	function jiu_btn(){
+		escolha_btn.style.display = "none";
+		jiu.style.display = "block";
+		adv.style.display = "block";
+		lifev.style.display = "block";
+		lifea.style.display = "block";
+		golpes_btn.style.display = "block";
+	}
+	
+	function judo_btn(){
+		escolha_btn.style.display = "none";
+		judo.style.display = "block";
+		adv.style.display = "block";
+		lifev.style.display = "block";
+		lifea.style.display = "block";
+		golpes_btn.style.display = "block";
+	}
+	
+	function boxe_btn(){
+		escolha_btn.style.display = "none";
+		boxe.style.display = "block";
+		adv.style.display = "block";
+		lifev.style.display = "block";
+		lifea.style.display = "block";
+		golpes_btn.style.display = "block";
+	}
+	
+	function thai_btn(){
+		escolha_btn.style.display = "none";
+		thai.style.display = "block";
+		adv.style.display = "block";
+		lifev.style.display = "block";
+		lifea.style.display = "block";
+		golpes_btn.style.display = "block";
+	}
+	
+	function mma_btn(){
+		escolha_btn.style.display = "none";
+		mma.style.display = "block";
+		adv.style.display = "block";
+		lifev.style.display = "block";
+		lifea.style.display = "block";
+		golpes_btn.style.display = "block";
+	}
+	
+	function atacar() {
+        vidaa = vidaa - 10;
+        lifea.style.width = vidaa + '%';
+		if (vidaa == 0) {
+            adv.src = "https://media3.giphy.com/media/ZFo5A50k019cFyBftd/giphy-downsized-large.gif";
+            golpes_btn.style.display = "none";
+			menu_btn.style.display = "block";
+        }
+    }
+	
+	function apanhar() {
+        vidav = vidav - 10;
+        lifev.style.width = vidav + '%';
+		if (vidav == 0) {
+            jiu.src = "https://media3.giphy.com/media/ZFo5A50k019cFyBftd/giphy-downsized-large.gif";
+            golpes_btn.style.display = "none";
+			menu_btn.style.display = "block";
+        }
+		if (vidav == 0) {
+            judo.src = "https://media3.giphy.com/media/ZFo5A50k019cFyBftd/giphy-downsized-large.gif";
+            golpes_btn.style.display = "none";
+			menu_btn.style.display = "block";
+        }
+		if (vidav == 0) {
+            boxe.src = "https://media3.giphy.com/media/ZFo5A50k019cFyBftd/giphy-downsized-large.gif";
+            golpes_btn.style.display = "none";
+			menu_btn.style.display = "block";
+        }
+		if (vidav == 0) {
+            thai.src = "https://media3.giphy.com/media/ZFo5A50k019cFyBftd/giphy-downsized-large.gif";
+            golpes_btn.style.display = "none";
+			menu_btn.style.display = "block";
+        }
+		if (vidav == 0) {
+            mma.src = "https://media3.giphy.com/media/ZFo5A50k019cFyBftd/giphy-downsized-large.gif";
+            golpes_btn.style.display = "none";
+			menu_btn.style.display = "block";
+        }
+    }
+	
+	function voltar(){
+		escolha_btn.style.display = "block";
+		boxe.style.display = "none";
+		adv.style.display = "none";
+		lifev.style.display = "none";
+		lifea.style.display = "none";
+		golpes_btn.style.display = "none";
+		jiu.style.display = "none";
+		judo.style.display = "none";
+		boxe.style.display = "none";
+		thai.style.display = "none";
+		mma.style.display = "none";
+		menu_btn.style.display = "none";
+		vidav = 100;
+		vidaa = 100;
+	}
+
+</script>
 
  
