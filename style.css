@@ -60,7 +60,9 @@ body {
     background-image: url("https://media.istockphoto.com/photos/blue-and-red-fire-picture-id152129791?k=20&m=152129791&s=170667a&w=0&h=0lb4MdHEQn_zzdZ9-UTDmfCcpFGK5PHxCYGBM5rxhKs=");
     background-size: cover;
 }
-
+.banner #login #conteudo #botao{
+    margin-bottom: 50px;
+}
 .banner .container {
     /* border: 3px solid green; */
     height: 500px;
@@ -117,6 +119,15 @@ body {
     border-radius: 10px;
     padding: 3px;
     margin: 3px;
+}
+
+.combo{
+    height: 30px;
+    width: 260px;
+    border-radius: 10px;
+    padding: 3px;
+    margin: 3px;
+    border: solid #0daceb 2px;
 }
 
 /* missao visao valores */
@@ -255,6 +266,7 @@ h4 {
     /* border: 3px solid yellow; */
     background-image: url("https://baronieducar.com.br/wp-content/uploads/2018/09/icone-missao-300x300.png");
     background-size: cover;
+    /* margin: 100px; */
 }
 
 .banner-login .container {
@@ -417,6 +429,7 @@ form {
 
 .btn-nav-white {
     width: 40%;
+    height: 30px;
     background-color: white;
     border: 3px solid #0daceb;
     border-radius: 5px;
