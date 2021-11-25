@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Site Marcial</title>
+
+  <script src="./assets/js/funcoes.js"></script>
+
+  <link rel="shortcut icon" href="https://cdn0.iconfinder.com/data/icons/japan-4/512/b100_2-128.png"
+    type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <h1>Site <span class="highlight">Marcial</span></h1>
+      <ul class="navbar">
+        <li>
+          <a href="./index.html">Inicial</a>
+        </li>
+        <li>
+          <a href="./mac.html">MAC</a>
+        </li>
+        <li>|</li>
+        <li>
+          <a href="./login.html">Login</a>
+        </li>
+        <li class="agora">
+          Cadastro
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="banner3">
+
+    <div id="login">
+        <div id="conteudo">
+		 <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+            <h1>Crie sua conta</h1>
+
+			E-mail:<br>
+            <input name="email" id="email" class="ipt" type="email" placeholder="exemplo@email.com"><br>
+            Login:<br>
+            <input name="usuario" id="usuario" class="ipt" type="text" placeholder="Insira seu nome de usuário"><br>
+            Senha:<br>
+            <input name="senha" id="senha" class="ipt" type="password" placeholder="Digite sua senha"><br>
+			Confirme sua senha:<br>
+            <input name="conf_senha" id="conf_senha" class="ipt" type="password" placeholder="Digite sua senha novamente"><br>
+            Arte Marcial:<br>
+            <select name="luta" id="sel_am" class="combo">
+              <option value="">Selecione a luta de sua preferência</option>
+              <option value="100">Jiu-jitsu</option>
+              <option value="101">Judô</option>
+              <option value="102">Muay Thai</option>
+              <option value="103">Boxe</option>
+              <option value="104">MMA</option>
+            </select><br>
+            <!-- <div id="botao"> -->
+                <button class="btn" onclick="cadastrar_btn()";>Cadastre-se</button><br><br>
+                <!-- <button class="btn2" onclick=cadastro();>Cadastre-se</button>-->
+            <!-- </div> -->
+
+			</form>
+        </div>
+    </div>
+
+</div>
+
+  <div class="footer">
+    <div class="container">
+      <h4>Developed by Igor Quintanilha from BandTec &copy; 2021</h4>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+
+   function limparFormulario() {
+        document.getElementById("form_cadastro").reset();
+    }
+
+    function cadastrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        var usuario = formulario.get("usuario");
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+		var luta = formulario.get("luta");
+
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (usuario == "" || email == "" || senha == "" || luta == "") {
+            
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (usuario == "")  {
+                console.log('usuario está em branco')
+            }
+            if (email == "" )  {
+                console.log('email está em branco')
+            }
+            if (senha == "" )  {
+                console.log('senha está em branco')
+            }
+            finalizarAguardar();
+            return false;
+        }
+        
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("E-mail inválido!");
+            finalizarAguardar();
+            return false;
+        }
+        
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "login.html";
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw("Cadastro não realizado!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+</script>
