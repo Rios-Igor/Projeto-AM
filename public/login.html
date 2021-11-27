@@ -8,7 +8,7 @@
 
   <title>Site Marcial</title>
 
-  <script src="./assets/js/funcoes.js"></script>
+  <script src="funcoes.js"></script>
 
   <link rel="shortcut icon" href="https://cdn0.iconfinder.com/data/icons/japan-4/512/b100_2-128.png"
     type="image/x-icon">
@@ -45,18 +45,23 @@
 
     <div id="login">
         <div id="conteudo">
-            <h1>Acesse sua conta</h1><br>
+          <form id="form_login" onsubmit="return entrar()">            <h1>Acesse sua conta</h1><br>
 
             Login:<br>
-            <input id="usuario" class="ipt" type="text" placeholder="Insira seu nome de usuário"><br><br>
+            <input name="usuario" class="ipt" type="text" placeholder="Insira seu nome de usuário"><br><br>
             Senha:<br>
-            <input id="senha" class="ipt" type="password" placeholder="Digite sua senha"><br><br>
+            <input name="senha" class="ipt" type="password" placeholder="Digite sua senha"><br><br>
             <div id="botao">
                 <button class="btn" onclick=entrar();>Entrar</button>
                 <!-- <button class="btn2" onclick=cadastro();>Cadastre-se</button>-->
             </div>
 
         </div>
+      </form>
+
+    <div id="div_erros_login">
+        
+    </div>
     </div>
 
 </div>
@@ -72,14 +77,62 @@
 
 <script>
 
-	function entrar(){
-		if(usuario.value == ''){
-			alert("Usuário inválido");
-		}else if(senha.value == ''){
-			alert("Senha inválida");
-		}else{
-			alert("Logado com sucesso");
-		}
-	}
+	function limparFormulario() {
+        document.getElementById("form_login").reset();
+    }
+
+    function entrar() {
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
+
+        var usuario = formulario.get("usuario");
+        var senha = formulario.get("senha");
+
+        console.log("FORM LOGIN: ", usuario);
+        console.log("FORM SENHA: ", senha);
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (usuario == "" || senha == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+            return false;
+        }
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.NOME_USUARIO = json.usuario;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "mac.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
 
 </script> 

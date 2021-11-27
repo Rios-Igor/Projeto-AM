@@ -30,7 +30,8 @@ function entrar (req, res) {
 
     if (usuario == undefined) {
         res.status(400).send("Seu usuário está undefined!");
-    } else if (senha == undefined) {
+    }
+    else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
         usuarioModel.entrar(usuario, senha)
@@ -63,7 +64,7 @@ function cadastrar(req, res) {
     var usuario = req.body.usuario;
     var email = req.body.email;
     var senha = req.body.senha;
-    var fkLuta = req.body.fkLuta;
+    var Luta = req.body.luta;
 
     if (usuario == undefined) {
         res.status(400).send("Seu usuário está undefined!");
@@ -72,10 +73,10 @@ function cadastrar(req, res) {
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
     }
-    else if (fkLuta == undefined) {
+    else if (Luta == undefined) {
         res.status(400).send("Sua luta está undefined!");
     } else {
-        usuarioModel.cadastrar(usuario, email, senha, fkLuta)
+        usuarioModel.cadastrar(usuario, email, senha, Luta)
         .then(
             function (resultado) {
                 res.json(resultado);

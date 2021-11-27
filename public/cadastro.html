@@ -8,7 +8,7 @@
 
   <title>Site Marcial</title>
 
-  <script src="./assets/js/funcoes.js"></script>
+  <script src="funcoes.js"></script>
 
   <link rel="shortcut icon" href="https://cdn0.iconfinder.com/data/icons/japan-4/512/b100_2-128.png"
     type="image/x-icon">
@@ -44,33 +44,39 @@
   <div class="banner3">
 
     <div id="login">
-        <div id="conteudo">
-		 <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-            <h1>Crie sua conta</h1>
+      <div id="conteudo">
+        <form id="form_cadastro" onsubmit="return cadastrar()">
+		 
+				<h1>Crie sua conta</h1>
 
-			E-mail:<br>
-            <input name="email" id="email" class="ipt" type="email" placeholder="exemplo@email.com"><br>
-            Login:<br>
-            <input name="usuario" id="usuario" class="ipt" type="text" placeholder="Insira seu nome de usuário"><br>
-            Senha:<br>
-            <input name="senha" id="senha" class="ipt" type="password" placeholder="Digite sua senha"><br>
-			Confirme sua senha:<br>
-            <input name="conf_senha" id="conf_senha" class="ipt" type="password" placeholder="Digite sua senha novamente"><br>
-            Arte Marcial:<br>
-            <select name="luta" id="sel_am" class="combo">
-              <option value="">Selecione a luta de sua preferência</option>
-              <option value="100">Jiu-jitsu</option>
-              <option value="101">Judô</option>
-              <option value="102">Muay Thai</option>
-              <option value="103">Boxe</option>
-              <option value="104">MMA</option>
-            </select><br>
-            <!-- <div id="botao"> -->
-                <button class="btn" onclick="cadastrar_btn()";>Cadastre-se</button><br><br>
-                <!-- <button class="btn2" onclick=cadastro();>Cadastre-se</button>-->
-            <!-- </div> -->
-
+				E-mail:<br>
+				<input name="email" id="email" class="ipt" type="email" placeholder="exemplo@email.com"><br>
+				Login:<br>
+				<input name="usuario" id="usuario" class="ipt" type="text" placeholder="Insira seu nome de usuário"><br>
+				Senha:<br>
+				<input name="senha" id="senha" class="ipt" type="password" placeholder="Digite sua senha"><br>
+				Confirme sua senha:<br>
+				<input name="conf_senha" id="conf_senha" class="ipt" type="password" placeholder="Digite sua senha novamente"><br>
+				Arte Marcial:<br>
+				<select name="luta" id="sel_am" class="combo">
+				  <option value="">Selecione a luta de sua preferência</option>
+				  <option value="100">Jiu-jitsu</option>
+				  <option value="101">Judô</option>
+				  <option value="102">Muay Thai</option>
+				  <option value="103">Boxe</option>
+				  <option value="104">MMA</option>
+				</select><br>
+				<!-- <div id="botao"> -->
+					<button class="btn" onclick="cadastrar_btn()";>Cadastre-se</button><br><br>
+					<!-- <button class="btn2" onclick=cadastro();>Cadastre-se</button>-->
+				<!-- </div> -->
+        
 			</form>
+     
+
+    <div id="div_erros_login">
+        
+    </div>
         </div>
     </div>
 
@@ -92,18 +98,18 @@
     }
 
     function cadastrar() {
-        aguardar();
 
         var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
 
         var usuario = formulario.get("usuario");
         var email = formulario.get("email");
         var senha = formulario.get("senha");
-		var luta = formulario.get("luta");
+        var confsenha = formulario.get("conf_senha");
+		    var Luta = formulario.get("luta");
 
 
         // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
-        if (usuario == "" || email == "" || senha == "" || luta == "") {
+        if (usuario == "" || email == "" || senha == "" || Luta == "" || confsenha == "") {
             
             window.alert("Preencha todos os campos para prosseguir!");
             if (usuario == "")  {
@@ -115,13 +121,17 @@
             if (senha == "" )  {
                 console.log('senha está em branco')
             }
-            finalizarAguardar();
+            if (Luta == "" )  {
+                console.log('senha está em branco')
+            }
+            if (senha != confsenha  )  {
+                console.log('Senha ou confirmação inválido')
+            }
             return false;
         }
         
         if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
             window.alert("E-mail inválido!");
-            finalizarAguardar();
             return false;
         }
         
@@ -137,13 +147,11 @@
                 window.alert("Cadastro realizado com sucesso!");
                 window.location = "login.html";
                 limparFormulario();
-                finalizarAguardar();
             } else {
                 throw("Cadastro não realizado!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
         });
 
         return false;
