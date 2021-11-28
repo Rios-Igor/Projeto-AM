@@ -14,7 +14,7 @@
 
 </head>
 
-<body onload="validarSessao(),  obterDadosGrafico(1)">
+<body onload="validarSessao(), tudo()">
     <div class="janela">
         <div class="header-left">
             <h1>Site Marcial</h1>
@@ -53,6 +53,7 @@
     var aleatorio_dash3 = 0;
     var aleatorio_dash4 = 0;
     var aleatorio_dash5 = 0;
+
     function grafico(){
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
@@ -61,7 +62,7 @@
             labels: ['JIU-JITSU', "JUDO", "BOXE", "MUAY THAI", "MMA"],
             datasets: [{
                 label: 'USUÁRIOS',
-                data: [aleatorio_dash1.toFixed(3), aleatorio_dash2.toFixed(3), aleatorio_dash3.toFixed(3), aleatorio_dash4.toFixed(3), aleatorio_dash5.toFixed(3)],
+                data: [aleatorio_dash1, aleatorio_dash2, aleatorio_dash3, aleatorio_dash4, aleatorio_dash5],
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.2)',
                     'rgba(255, 206, 86, 0.2)',
@@ -97,19 +98,19 @@
 
                 for (let i = 0; i <= len; i++) {
                     let arquivo = data[i];
-                    if (arquivo.jogo == 1) {
+                    if (arquivo.fkLuta == 1) {
                         aleatorio_dash1++;
                     }
-                    if (arquivo.jogo == 2) {
+                    if (arquivo.fkLuta == 2) {
                         aleatorio_dash2++;
                     }
-                    if (arquivo.jogo == 3) {
+                    if (arquivo.fkLuta == 3) {
                         aleatorio_dash3++;
                     }
-                    if (arquivo.jogo == 4) {
+                    if (arquivo.fkLuta == 4) {
                         aleatorio_dash4++;
                     }
-                    if (arquivo.jogo == 5) {
+                    if (arquivo.fkLuta == 5) {
                         aleatorio_dash5++;
                     }
                     
