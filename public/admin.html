@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <script src="../assets/js/funcoes.js"></script>
+
+    <!-- scripts do Chart.js -->
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+
+</head>
+
+<body onload="validarSessao(),  obterDadosGrafico(1)">
+    <div class="janela">
+        <div class="header-left">
+            <h1>Site Marcial</h1>
+
+           
+
+
+
+            <div class="btn-nav">
+                <a href=""></a>
+                <h3>Analytics</h3>
+
+            </div>
+
+        </div>
+
+        <div class="dash">
+
+            <div class="graph">
+                <canvas id="canvas_grafico"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="graph">
+        <canvas id="myChart" style="width: 100%; height: 100%;"> </canvas>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var aleatorio_dash1 = 0;
+    var aleatorio_dash2 = 0;
+    var aleatorio_dash3 = 0;
+    var aleatorio_dash4 = 0;
+    var aleatorio_dash5 = 0;
+    function grafico(){
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['JIU-JITSU', "JUDO", "BOXE", "MUAY THAI", "MMA"],
+            datasets: [{
+                label: 'USUÁRIOS',
+                data: [aleatorio_dash1.toFixed(3), aleatorio_dash2.toFixed(3), aleatorio_dash3.toFixed(3), aleatorio_dash4.toFixed(3), aleatorio_dash5.toFixed(3)],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)'
+
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    }
+    function tudo() {
+        fetch("/usuarios/listar", {
+            method: "GET",
+        }).then(function (resposta) {
+
+
+            resposta.json().then(function (data) {
+                let len = data.length;
+
+                for (let i = 0; i <= len; i++) {
+                    let arquivo = data[i];
+                    if (arquivo.jogo == 1) {
+                        aleatorio_dash1++;
+                    }
+                    if (arquivo.jogo == 2) {
+                        aleatorio_dash2++;
+                    }
+                    if (arquivo.jogo == 3) {
+                        aleatorio_dash3++;
+                    }
+                    if (arquivo.jogo == 4) {
+                        aleatorio_dash4++;
+                    }
+                    if (arquivo.jogo == 5) {
+                        aleatorio_dash5++;
+                    }
+                    
+    grafico();
+                }
+
+            });
+        }).catch(function (error) {
+            console.error(`ERROR`, error);
+        });
+    }
+    tudo();
+</script>
